@@ -1,12 +1,20 @@
 const MAX_ITERATIONS = 100;
 const STOP_VALUE = 10;
+const ZOOM_MIN = 0;
+const ZOOM_MAX = 4.0;
+const SENSATIVITY = 0.001;
+
 const red_colors = [];
 const green_colors = [];
 const blue_colors = [];
+let zoom = 3.0;
 
 const outer_color_min = document.getElementById("outer_color_min");
 const outer_color_max = document.getElementById("outer_color_max");
 const inner_color = document.getElementById("inner_color");
+const c_number_real = document.getElementById("c_number_real");
+const c_number_imaginary = document.getElementById("c_number_imaginary");
+const scale_slider = document.getElementById("scale");
 
 function setup() {
     const canvas = createCanvas(600, 600);
@@ -14,7 +22,7 @@ function setup() {
     pixelDensity(1);
     noLoop();
 }
-  
+
 function draw(){
 
     for(let i = 0; i < MAX_ITERATIONS; i++){
@@ -27,8 +35,8 @@ function draw(){
 
     for(let x = 0; x < width; x++){
         for(let y = 0; y < height; y++){
-            let real = map(x, 0, width, -2, 2);
-            let imagine = map(y, 0, height, -2, 2);
+            let real = map(x, 0, width, -zoom, zoom);
+            let imagine = map(y, 0, height, -zoom, zoom);
 
             let start_real = real;
             let start_imagine = imagine;
@@ -80,4 +88,20 @@ outer_color_max.addEventListener("input", (event)=>{
 inner_color.addEventListener("input", (event)=>{
     inner_color.value = event.target.value;
     redraw();
-})
+});
+
+c_number_real.addEventListener("change", redraw);
+
+c_number_imaginary.addEventListener("change", redraw);
+
+scale_slider.addEventListener("change", (event) => {
+    zoom = event.target.value;  
+    redraw();
+});
+
+function mouseWheel(event){
+    zoom += event.delta * SENSATIVITY;
+    zoom = constrain(zoom, ZOOM_MIN, ZOOM_MAX);
+    redraw();
+    return false;
+}

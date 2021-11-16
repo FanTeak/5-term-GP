@@ -18,44 +18,66 @@
         <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
     </svg>
     <span id="span-text"><strong>Easy Graphics</strong></span>
-</div>
+  </div>
 
 <div class="wrapper">
     <div class="sidebar">
         <ul>
-            <li><a href="#">Fractal</a></li>
-            <li><a href="#">Color</a></li>
-            <li><a href="#">Square</a></li>
-            <li><a href="#">Export</a></li>
-            <li><a href="#">Open</a></li>
-            <li><a href="#">Save</a></li>
-            <li><a href="#">Help</a></li>
+          <li><a href="#"><img src="resources/fractal.png"width="30" height="30">Fractal</a></li>
+          <li><a href="#"><img src="resources/color_palette.png"width="30" height="30">Color</a></li>
+          <li><a href="#"><img src="resources/stop.png"width="30" height="30">Square</a></li>
+          <li><a href="#"><img src="resources/image.png"width="30" height="30">Export</a></li>
+          <li><a href="#"><img src="resources/open.png"width="30" height="30">Open</a></li>
+          <li><a href="#"><img src="resources/floppy_disk.png"width="30" height="30">Save</a></li>
+          <li><a href="#"><img src="resources/ask.png"width="30" height="30">Help</a></li>
         </ul>
     </div>
     <div class="main_content">
-      <div class="header">
-        <div id="c_number_container">
-          <h5>The main formula for both fractals is f(z)=z*z+c</h5>
-          <div id="">
-
+      <div id="fractal_data">
+        <div id="fractal_data_wrapper">
+          <div id="c_number_container">
+            <h5>The main formula for both fractals is f(z)=z*z+c</h5>
+            <label for="c_number_real"><h5>Where real C:</h5></label>
+            <input type="text" id ="c_number_real" name="c_number_real">
+            <label for="c_number_imaginary"><h5>Imaginary:</h5></label>
+            <input type="text" id="c_number_imaginary" name="c_number_imaginary">
           </div>
-
-        </div>
-        <div id="outer_color_container" class="d-flex">
-          <div id="outer_color_min_container">
-            <label for="outer_color_min">Outer color</label>
-            <input type="color" id="outer_color_min" name="outer_color_min" value="#000000">
+          <div id="scale_container">
+            <label for="scale" id="scale_label"><h5>Scale</h5></label>
+            <div>
+              <input type="range" id="scale" name="scale" value="2.0" min="0.0" max="4.0" list="range_datalist" step="0.5">
+            </div>
+            <datalist id="range_datalist">
+              <option value="0.0" label="0%"></option>
+              <option value="0.5"></option>
+              <option value="1.0" label="50%"></option>
+              <option value="1.5"></option>
+              <option value="2.0" label="100%"></option>
+              <option value="2.5"></option>
+              <option value="3.0"></option>
+              <option value="3.5"></option>
+              <option value="4.0" label="200%"></option>
+            </datalist>
           </div>
-    
-          <div id="outer_color_max_container">
-            <input type="color" id="outer_color_max" name="outer_color_max" value = "#ffffff">
+        </div>
+        <div id="color_container">
+          <div id="outer_color_container" class="d-flex">
+            <div id="outer_color_min_container">
+              <label for="outer_color_min"><h5>Outer color:</h5></label>
+              <input type="color" id="outer_color_min" name="outer_color_min" value="#000000">
+            </div>
+      
+            <div id="outer_color_max_container">
+              <input type="color" id="outer_color_max" name="outer_color_max" value = "#ffffff">
+            </div>
+          </div>
+      
+          <div id="inner_color_container">
+            <label for="inner_color"><h5>Inner color:</h5></label>
+            <input type="color" id="inner_color" name="inner_color" value = "#ffffff">
           </div>
         </div>
-    
-        <div id="inner_color_container">
-          <label for="inner_color">Inner color</label>
-          <input type="color" id="inner_color" name="inner_color" value = "#ffffff">
-        </div>
+      
       </div>  
       <div class="info" id="fractal">
          
