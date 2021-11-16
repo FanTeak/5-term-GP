@@ -84,7 +84,7 @@ body{
 
 #fractal_data{
   display: flex;
-  padding: 2rem 2rem 0 2rem;
+  padding: 1.5rem 1.5rem 0 1.5rem;
 }
 
 #color_container{
@@ -94,4 +94,8 @@ body{
 
 #scale_container{
   text-align: center;
+}
+
+#fractal_type{
+  margin-left: 1.5rem;
 }

@@ -12,6 +12,8 @@ const inner_red_colors = [];
 const inner_green_colors = [];
 const inner_blue_colors = [];
 let zoom = 3.0;
+let currentX = 0;
+let currentY = 0;
 
 const outer_color_min = document.getElementById("outer_color_min");
 const outer_color_max = document.getElementById("outer_color_max");
@@ -21,8 +23,15 @@ const c_number_real = document.getElementById("c_number_real");
 const c_number_imaginary = document.getElementById("c_number_imaginary");
 const scale_slider = document.getElementById("scale");
 
+const save = document.getElementById("save");
+
 function setup() {
-    const canvas = createCanvas(600, 600);
+    const canvas = createCanvas(500, 500);
+    canvas.mouseWheel(zoom_canvas);
+    //canvas.mouseOver(change_mouse_xy);
+    save.addEventListener("click", (event) => {
+        saveCanvas(canvas, 'my_canvas', 'png');
+    });
     canvas.parent('fractal');
     pixelDensity(1);
 }
@@ -99,18 +108,29 @@ outer_color_max.addEventListener("input", event => {
     outer_color_max.value = event.target.value;
 });
 
-c_number_real.addEventListener("change", redraw);
+c_number_real.addEventListener("change", event => {
+    c.c_number_real.value = event.target.value;
+    redraw();
+});
 
-c_number_imaginary.addEventListener("change", redraw);
+c_number_imaginary.addEventListener("change", event => {
+    c.c_number_imaginary.value = event.target.value;
+    redraw();
+});
 
 scale_slider.addEventListener("change", (event) => {
     zoom = event.target.value;  
     redraw();
 });
 
-function mouseWheel(event){
-    zoom += event.delta * SENSATIVITY;
+function zoom_canvas(event){
+    zoom += event.deltaY * SENSATIVITY;
     zoom = constrain(zoom, ZOOM_MIN, ZOOM_MAX);
     redraw();
     return false;
 }
+
+/*function change_mouse_xy(event){
+    currentX = map(mouseX, 0, windowWidth, 0, width);
+    currentY = map(mouseY, 0, windowHeight, 0, height);
+}*/

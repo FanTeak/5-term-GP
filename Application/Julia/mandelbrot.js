@@ -16,12 +16,19 @@ const c_number_real = document.getElementById("c_number_real");
 const c_number_imaginary = document.getElementById("c_number_imaginary");
 const scale_slider = document.getElementById("scale");
 
+const save = document.getElementById("save");
+
 function setup() {
-    const canvas = createCanvas(600, 600);
+    const canvas = createCanvas(500, 500);
+    canvas.mouseWheel(zoom_canvas);
+    save.addEventListener("click", (event) => {
+        saveCanvas(canvas, 'my_canvas', 'png');
+    });
     canvas.parent('fractal');
     pixelDensity(1);
     noLoop();
 }
+
 
 function draw(){
 
@@ -90,17 +97,23 @@ inner_color.addEventListener("input", (event)=>{
     redraw();
 });
 
-c_number_real.addEventListener("change", redraw);
+c_number_real.addEventListener("change", event => {
+    c.c_number_real.value = event.target.value;
+    redraw();
+});
 
-c_number_imaginary.addEventListener("change", redraw);
+c_number_imaginary.addEventListener("change", event => {
+    c.c_number_imaginary.value = event.target.value;
+    redraw();
+});
 
 scale_slider.addEventListener("change", (event) => {
     zoom = event.target.value;  
     redraw();
 });
 
-function mouseWheel(event){
-    zoom += event.delta * SENSATIVITY;
+function zoom_canvas(event){
+    zoom += event.deltaY * SENSATIVITY;
     zoom = constrain(zoom, ZOOM_MIN, ZOOM_MAX);
     redraw();
     return false;

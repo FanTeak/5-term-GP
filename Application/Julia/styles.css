@@ -95,3 +95,7 @@ body{
 #scale_container{
   text-align: center;
 }
+
+#fractal_type{
+    margin-left: 1.5rem;
+}
