@@ -35,7 +35,6 @@ function setup() {
     canvas.parent('fractal');
     pixelDensity(1);
 }
-
 function draw(){
 
     for(let i = 0; i < MAX_ITERATIONS; i++){
