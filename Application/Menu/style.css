@@ -96,7 +96,7 @@ li a {
 }
 
 .workbench {
-  height: 100%;
+  height: 40rem !important;
 }
 
 body, html {
@@ -161,6 +161,6 @@ body, html {
 .main-footer{
   text-align: center;
   background-color: #FCF6FF;
-  margin-top: 3rem;
+  margin-top: 1rem;
   padding-bottom: 2em;
 }
