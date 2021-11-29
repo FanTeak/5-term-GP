@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <title>Easy Graphics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-easel2-fill"
+            viewBox="0 0 16 16">
+            <path
+                d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z" />
+            <path fill-rule="evenodd"
+                d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z" />
+        </svg>
+        <span id="span-text"><strong>Easy Graphics</strong></span>
+    </div>
+
+    <div class="wrapper">
+        <div class="sidebar">
+            <ul class="ul-nopadding">
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/fractal.png" />
+                        <p class="sb-text">Fractal</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/color.png" />
+                        <p class="sb-text">Color</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/square.png" />
+                        <p class="sb-text">Square</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/export.png" />
+                        <p class="sb-text">Export</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/open.png" />
+                        <p class="sb-text">Open</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/save.png" />
+                        <p class="sb-text">Save</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="sb-cont-left" href="#">
+                        <img class="sidebar-img" srs="./assets/help.png" />
+                        <p class="sb-text">Help</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main_content">
+            <div class="workbench">
+                <div class="container-movement">
+                    <div class="square-enter">
+                        Enter X, Y for diagonal for square:
+                        <div class="container-input">
+                            <label for="X1-square">X:</label>
+                            <input type="number" id="X1-square" name="X1-square" class="input">
+                            <label for="Y1-square">Y:</label>
+                            <input type="number" id="Y1-square" name="Y1-square" class="input">
+                        </div>
+                        <div class="container-input">
+                            <label for="X2-square">X:</label>
+                            <input type="number" id="X2-square" name="X2-square" class="input">
+                            <label for="Y2-square">Y:</label>
+                            <input type="number" id="Y2-square" name="Y2-square" class="input">
+                        </div>
+                    </div>
+                    <div class="square-move">
+                        Enter X, Y for vector to square move:
+                        <div class="container-input">
+                            <label for="X1-move">X:</label>
+                            <input type="number" id="X1-move" name="X1-move" class="input">
+                            <label for="Y1-move">Y:</label>
+                            <input type="number" id="Y1-move" name="Y1-move" class="input">
+                        </div>
+                    </div>
+                    <div class="square-scale">
+                        Enter X, Y for vector to scale square:
+                        <div class="container-input">
+                            <label for="X1-scale">X:</label>
+                            <input type="number" id="X1-scale" name="X1-scale" class="input">
+                            <label for="Y1-scale">Y:</label>
+                            <input type="number" id="Y1-scale" name="Y1-scale" class="input">
+                        </div>
+                    </div>
+                    <div class="square-clock">
+                        Enter the angle square will move:
+                        <div class="container-input">
+                            <label for="X1-clock">X:</label>
+                            <input type="number" id="X1-clock" name="X1-clock" class="input">
+                            <label style="padding-right: 0.5rem;">Clockwise:</label>
+                            <input class="form-check-input" type="checkbox" id="Y1-clock" name="Y1-clock" value="true">
+                        </div>
+                    </div>
+                    <div class="square-run">
+                        <button class="button-49" role="button">Fractals</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
