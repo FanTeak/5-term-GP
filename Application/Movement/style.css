@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #F0EAFF;
+}
+
+.wrapper {
+  display: flex;
+  background-color: #F0EAFF;
+}
+
+.wrapper .sidebar {
+  width: 20%;
+  height: 100%;
+  background: #F0EAFF;
+  display: inline;
+}
+
+.wrapper .sidebar ul li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a {
+  color: #000000;
+  display: block;
+  text-align:center;
+}
+
+.wrapper .sidebar ul li a .fas {
+    width: 25px;
+  }
+
+.wrapper .sidebar ul li:hover {
+  background-color: #594f8d;
+}
+    
+.wrapper .sidebar ul li:hover a {
+  color: #fff;
+}
+
+.wrapper .main_content {
+  width: 100%;
+  display: inline;
+  height: 100%;
+}
+
+#header {
+    background-color: #E0D6FF;
+    padding: 0.5em 1em 0.5em 2em;
+}
+
+#span-text {
+    font-family: Arial;
+    margin-left: 40em;
+}
+
+.ul-nopadding {
+    padding-left: 0px !important;
+}
+
+.sidebar-img {
+  margin: 0 2rem;
+  width: 40px;
+  height: 40px;
+}
+
+.sb-cont-left {
+  display: flex !important;
+  justify-content: left;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.sb-text {
+  display: inline;
+  margin: auto 0;
+}
+
+.workbench {
+  background-color: #FFF6FF;
+}
+
+body, html {
+  background-color: #F0EAFF;
+  margin: 0;
+  padding: 0;
+}
+
+.container-movement {
+    background-color: #FCF6FF;
+    width: 80rem;
+    height: 15rem;
+}
+
+.square-enter {
+    float: left;
+    border: thick double #E0D6FF;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.square-move {
+    float: left;
+    border: thick double #E0D6FF;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.square-scale {
+    float: left;
+    border: thick double #E0D6FF;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.square-clock {
+    float: left;
+    border: thick double #E0D6FF;
+    padding: 1rem;
+    margin: 0.5rem;
+}
+
+.square-run {
+    padding: 8.5rem 0 0 33rem;
+}
+
+.container-input {
+    padding: 1rem 0 0 0;
+}
+
+.input {
+    width: 6.4rem;
+}
+
+.button-49, .button-49:after {
+    width: 150px;
+    height: 76px;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    background: linear-gradient(45deg, transparent 5%, hotpink 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-49:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+    
+    content: 'CUM';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, hotpink 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+  }
+  
+  .button-49:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 10px);
+    }
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 10px);
+    }
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 5px);
+    }
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-5px, 0px);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(5px, 0px);
+    }
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(5px, 10px);
+    }
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -10px);
+    }
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .button-49,
+    .button-49:after {
+      width: 200px;
+      height: 86px;
+      line-height: 88px;
+    }
+  }

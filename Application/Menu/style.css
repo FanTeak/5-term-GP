@@ -10,7 +10,11 @@
 }
 
 body {
-  background-color: #F0EAFF
+  background-color: #F0EAFF;
+}
+
+.mega-wrapper{
+    height: 100%;
 }
 
 .wrapper {
@@ -52,9 +56,9 @@ body {
 }
 
 .wrapper .main_content {
-  background-color: #FCF6FF;
   width: 100%;
   display: inline;
+  background-color: #FCF6FF;
 }
 
 #header {
@@ -92,39 +96,71 @@ li a {
 }
 
 .workbench {
-  height: 100%;
+  height: 40rem !important;
 }
 
 body, html {
-  background-color: #1d1c25;
+  background-color: #F0EAFF;
   margin: 0;
   padding: 0;
 }
 
-.footer-type {
-  margin: 2rem;
+.main-name{
+    margin: 2rem 25rem 0 25rem;
+    font-family: Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #7A4DFF;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 5px solid #7A4DFF;
 }
 
-#fractal_data{
-  display: flex;
-  padding: 2rem 2rem 0 2rem;
+.main-menu {
+    margin: 2rem 8rem 0 8rem;
+    width: 1000px;
+    height: 450px;
 }
 
-#color_container{
-  justify-content: center;
-  margin: auto;
+.main-menu a {
+  text-decoration: none;
 }
 
-#scale_container{
+.main-fractal {
+  float:left; 
+  width: 250px;
+  height: 440px;
+}
+
+.main-color {
+  float:left; 
+  width: 250px;
+  height: 440px;
+  margin-left: 8rem;
+}
+
+.main-move {
+  float:right;
+  width:250px;
+  height: 440px;
+}
+
+.main-img{
+    width: 250px;
+    height: 380px;
+    border-radius: 2rem;
+}
+
+.main-text-img{
+  margin: 1rem 3.2rem 0;
+  color: #000;
+  font-size: 25px;
+}
+
+.main-footer{
   text-align: center;
-}
-
-#fractal_type{
-    margin-left: 1.5rem;
-}
-
-.sidebar-img {
-  margin: 0 2rem;
-  width: 40px;
-  height: 40px;
+  background-color: #FCF6FF;
+  margin-top: 1rem;
+  padding-bottom: 2em;
 }
