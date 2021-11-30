@@ -84,46 +84,46 @@
                         Enter X, Y for diagonal for square:
                         <div class="container-input">
                             <label for="X1-square">X:</label>
-                            <input type="number" id="X1-square" name="X1-square" class="input">
+                            <input type="number" id="X1-square" name="X1-square" class="input input-enter" value="1" step="0.1">
                             <label for="Y1-square">Y:</label>
-                            <input type="number" id="Y1-square" name="Y1-square" class="input">
+                            <input type="number" id="Y1-square" name="Y1-square" class="input input-enter" value="1" step="0.1">
                         </div>
                         <div class="container-input">
                             <label for="X2-square">X:</label>
-                            <input type="number" id="X2-square" name="X2-square" class="input">
+                            <input type="number" id="X2-square" name="X2-square" class="input input-enter" value="3" step="0.1">
                             <label for="Y2-square">Y:</label>
-                            <input type="number" id="Y2-square" name="Y2-square" class="input">
+                            <input type="number" id="Y2-square" name="Y2-square" class="input input-enter" value="3" step="0.1">
                         </div>
                     </div>
                     <div class="square-move">
                         Enter X, Y for vector to square move:
                         <div class="container-input">
                             <label for="X1-move">X:</label>
-                            <input type="number" id="X1-move" name="X1-move" class="input">
+                            <input type="number" id="X1-move" name="X1-move" class="input input-move" value="1" step="1">
                             <label for="Y1-move">Y:</label>
-                            <input type="number" id="Y1-move" name="Y1-move" class="input">
+                            <input type="number" id="Y1-move" name="Y1-move" class="input input-move" value="3" step="1">
                         </div>
                     </div>
                     <div class="square-scale">
                         Enter X, Y for vector to scale square:
                         <div class="container-input">
                             <label for="X1-scale">X:</label>
-                            <input type="number" id="X1-scale" name="X1-scale" class="input">
+                            <input type="number" id="X1-scale" name="X1-scale" class="input input-scale" value="2" step="1">
                             <label for="Y1-scale">Y:</label>
-                            <input type="number" id="Y1-scale" name="Y1-scale" class="input">
+                            <input type="number" id="Y1-scale" name="Y1-scale" class="input input-scale" value="2" step="1">
                         </div>
                     </div>
                     <div class="square-clock">
                         Enter the angle square will move:
                         <div class="container-input">
                             <label for="X1-clock">X:</label>
-                            <input type="number" id="X1-clock" name="X1-clock" class="input">
+                            <input type="number" id="X1-clock" name="X1-clock" class="input input-angle" value="45" step="1">
                             <label style="padding-right: 0.5rem;">Clockwise:</label>
                             <input class="form-check-input" type="checkbox" id="Y1-clock" name="Y1-clock" value="true">
                         </div>
                     </div>
                     <div class="square-run">
-                        <button class="button-49" role="button">Run</button>
+                        <button class="button-49" role="button" onclick="RedrawSquare()">Run</button>
                     </div>
                 </div>
                 <div id="container-move" class="col-md-8 card card-body bg-light">
@@ -134,7 +134,7 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" language="javascript" type="text/javascript"></script>
 </body>
 
 </html>
