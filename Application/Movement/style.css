@@ -147,6 +147,11 @@ body, html {
     width: 6.4rem;
 }
 
+#container-move{
+  margin-left: 20rem;
+  width: 39.7rem;
+}
+
 .button-49, .button-49:after {
     width: 150px;
     height: 76px;
