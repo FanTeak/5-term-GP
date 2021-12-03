@@ -3,6 +3,7 @@ var lengthX = 15;
 var lengthY = 15;
 var startX = {num: 1, suf: ''};
 var startY = {num: 1, suf: ''};
+var onLoad = true;
 
 var canvas = document.getElementById("canvas-move");
 /** @type {CanvasRenderingContext2D} */
@@ -128,6 +129,7 @@ function DrawGrid(){
 DrawGrid();
 
 var squarePoints = [[],[],[],[]];
+var startPoints = [[],[],[],[]];
 
 function coordinatesDiagonal(){
     let diagonalX1 = parseFloat(document.getElementById('X1-square').value);
@@ -147,15 +149,35 @@ function coordinatesDiagonal(){
     return squarePoints;
 }
 
-function DrawSquare(color){
+function DrawSquare(coordinates, color){
     canvasData.beginPath();
-    canvasData.moveTo(squarePoints[0][0] / startX.num * coordinateCount, -squarePoints[0][1] / startY.num * coordinateCount);
-    for (let index = 1; index < squarePoints.length; index++) {
-        canvasData.lineTo(squarePoints[index][0] / startX.num * coordinateCount, -squarePoints[index][1] / startY.num * coordinateCount);
+    canvasData.moveTo(coordinates[0][0] / startX.num * coordinateCount, -coordinates[0][1] / startY.num * coordinateCount);
+    for (let index = 1; index < coordinates.length; index++) {
+        canvasData.lineTo(coordinates[index][0] / startX.num * coordinateCount, -coordinates[index][1] / startY.num * coordinateCount);
     }
     canvasData.closePath();
     canvasData.strokeStyle = color;
     canvasData.stroke();
+}
+
+function Timer() {
+    var sec = 5;
+    var timer = setInterval(function() {
+    if((sec % 2) == 0){
+        DrawGrid();
+        DrawSquare(squarePoints, 'hotpink');
+    }
+    else{
+        DrawGrid();
+        DrawSquare(startPoints, '#32a852');
+    }
+    sec--;
+    if(sec < 0){
+        clearInterval(timer);
+        DrawGrid();
+        DrawSquare(squarePoints, 'hotpink');
+    }
+}, 1000);
 }
 
 function MoveSquare() {
@@ -193,7 +215,12 @@ function ScaleSquare() {
 function AngleSquare() {
     let angle = parseFloat(document.getElementById('X1-clock').value);
     let radians = angle * Math.PI / 180;
-    var angleMatrix = [[Math.cos(radians), Math.sin(radians)], [-Math.sin(radians), Math.cos(radians)]];
+    if (document.getElementById('Y1-clock').checked) {
+        var angleMatrix = [[Math.cos(radians), -Math.sin(radians)], [Math.sin(radians), Math.cos(radians)]];
+    }
+    else{
+        var angleMatrix = [[Math.cos(radians), Math.sin(radians)], [-Math.sin(radians), Math.cos(radians)]];
+    }
     squarePoints = MulMatrix(squarePoints, angleMatrix);
 }
 
@@ -210,7 +237,8 @@ function MulMatrix(matrix1, matrix2) {
     return result;
 }
 
-document.querySelector('.input-enter').addEventListener('keyup', ()=>{
+
+/*document.querySelector('.input-enter').addEventListener('keyup', ()=>{
     DrawGrid();
     coordinatesDiagonal();
     MoveSquare();
@@ -244,15 +272,33 @@ document.querySelector('.input-angle').addEventListener('keyup', ()=>{
     ScaleSquare();
     AngleSquare();
     DrawSquare('hotpink');
-});
+});*/
 
 function RedrawSquare(){
     DrawGrid();
     coordinatesDiagonal();
+    if(onLoad == true){
+        startPoints = [...squarePoints];
+        for (let i = 0; i < squarePoints.length; i++) { 
+            startPoints[i] =  [...squarePoints[i]];           
+        }
+    }
     MoveSquare();
     ScaleSquare();
     AngleSquare();
-    DrawSquare('hotpink');
+    if(onLoad == true){
+        DrawSquare(squarePoints, 'hotpink');
+        onLoad = false;
+    }
+    else{
+        Timer();
+    }
+    setTimeout(()=>{
+        startPoints = [...squarePoints];
+        for (let i = 0; i < squarePoints.length; i++) { 
+            startPoints[i] =  [...squarePoints[i]];           
+        }
+    }, 5000);
 }
 
 RedrawSquare();
@@ -277,8 +323,8 @@ function Wheel(event) {
     return false;
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-    document.getElementById('canvas-move').addEventListener('mousewheel', Wheel)
+$(document).ready(function(){
+    $('#canvas-move').bind('mousewheel', Wheel);
 });
 
 Number.prototype.between = function(a, b, checker) {
