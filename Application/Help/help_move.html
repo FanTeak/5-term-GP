@@ -34,37 +34,37 @@
             <ul class="ul-nopadding">
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/fractal.png" />
+                        <img class="sidebar-img" srs="./assets/fractal.png"></img>
                         <p class="sb-text">Fractal</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/color.png" />
+                        <img class="sidebar-img" srs="./assets/color.png"></img>
                         <p class="sb-text">Color</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/square.png" />
+                        <img class="sidebar-img" srs="./assets/square.png"></img>
                         <p class="sb-text">Square</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/export.png" />
+                        <img class="sidebar-img" srs="./assets/export.png"></img>
                         <p class="sb-text">Export</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/open.png" />
+                        <img class="sidebar-img" srs="./assets/open.png"></img>
                         <p class="sb-text">Open</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/save.png" />
+                        <img class="sidebar-img" srs="./assets/save.png"></img>
                         <p class="sb-text">Save</p>
                     </a>
                 </li>
@@ -76,12 +76,204 @@
                 </li>
             </ul>
         </div>
+
         <div class="main_content">
             <div class="workbench">
-
+                <div class="help-menu">
+                    <div class="fractal-menu">
+                        <button class="button-49" role="button">Fractals</button>
+                    </div>
+                    <div class="color-menu">
+                        <button class="button-49" role="button">Colors</button>
+                    </div>
+                    <div class="move-menu">
+                        <button class="button-49" role="button">Movement</button>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <h2>Movement</h2>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Загальна інформація</h5>
+                    </div>
+                    <div class="panel">
+                        <p>
+                            Виконання різноманітних дій з геометричними об’єктами є центральною задачею в комп’ютерній графіці. 
+                            Тому вибір математичних методів і алгоритмів для її реалізації суттєво впливає на ефективність цілої 
+                            графічної системи. 
+                            У сучасній комп’ютерній графіці досить широко використовується метод координат, 
+                            оскільки графічне зображення складається з пікселів, які задаються координатами. 
+                            Крім цього, координати використовуються для опису розміщення об’єктів та для створення зображень 
+                            шляхом перетворень з однієї системи координат в іншу.
+                        </p>
+                        <p>
+                            Афінним називається перетворення, що має такі властивостями:
+                            <ul>
+                                <li>
+                                    будь-яке афінне перетворення може бути представлене як послідовність операцій з 
+                                    числа найпростіших: зсув, розтягнення/стиснення, поворот;
+                                </li>
+                                <li>
+                                    зберігаються прямі лінії, паралельність прямих, відношення довжин відрізків, 
+                                    що лежать на одній прямій, і відношення площ фігур.
+                                </li>
+                            </ul>
+                        </p>
+                        
+                    </div>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Афінні перетворення координат на площині</h5>
+                    </div>
+                    <div class="panel">
+                        <p>
+                            (X, Y) – двовимірна система координат,
+                            (x, y) – координати старої системи в новій системі координат.
+                        </p>
+                        <p>
+                            <div class="container-panel">
+                                <img style="height:100px; width:200px;" src="image001.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            Загальний вигляд афінного перетворення:
+                            <div class="container-panel">
+                                <img style="height:100px; width:200px;" src="image002.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            де A, B, C, D, E, F – константи.
+                        </p>
+                        <p>
+                            Афінні перетворення трьох видів є основою для рухомих зображень:
+                            <ul>
+                                <li>
+                                    переміщення/зсув;
+                                </li>
+                                <li>
+                                    масштабування (збільшення/зменшення);
+                                </li>
+                                <li>
+                                    поворот на кут.
+                                </li>
+                            </ul>
+                        </p>
+                        <p>
+                            Для ефективного використання  цих формул у задачах КГ переходять до матричного запису.
+                        </p>
+                    </div>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Переміщення об’єкта</h5>
+                    </div>
+                    <div class="panel">
+                        <p>
+                            Елементарним зсувом вважається паралельне перенесення об'єкта (системи координат) на 
+                            задані величини відносно початку координат (0,0).
+                        </p>
+                        <p>
+                            Переміщення об’єкта:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image004.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            або матрицею:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image005.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            Переміщення об’єкта на координатній сітці:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image006.jpg"></img>
+                                <p>Рис. 1 Переміщення об’єкта</p>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Масштабування об’єкта</h5>
+                    </div>
+                    <div class="panel">
+                        <p>
+                            Масштабування системи координат задається як зміна одиничних відрізків:
+                        </p>
+                        <p>
+                            Масштабування об’єкту:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image011.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            а в матричній формі:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image012.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            Масштабування об’єкта на координатній сітці:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image013.jpg"></img>
+                                <p>Рис. 2 Масштабування об’єкта</p>
+                            </div>
+                        </p>
+                        <p>
+                            Коефіцієнти можуть бути від’ємними. Наприклад, при kx = -1 отримуємо дзеркальне відображення відносно осі Y.
+                        </p>
+                        <p>
+                            Також варто зауважити, що у вище згаданих формулах йдеться про пропорційне зміщення всіх сторін об’єкту.
+                        </p>
+                        <p>
+                            Елементарним масштабуванням вважається перетворення відносно початку координат (0,0).
+                        </p>
+                        <p>
+                            Примітка! У даних формулах йде мова про масштабування об’єкту та його переміщення. 
+                            Якщо потрібно зробити чисте масштабування без ефекту переміщення, 
+                            тоді варто об’єкт помістити в центр координат.
+                        </p>
+                    </div>
+                    <div class="accordion">
+                        <div class="icon"></div>
+                        <h5>Поворот об’єкта</h5>
+                    </div>
+                    <div class="panel">
+                        <p>
+                            Поворот об’єкта відносно центру координат на кут α відповідає системі рівнянь:
+                            <div class="container-panel">
+                                <img style="height:100px; width:300px;" src="image022.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            або задається матрицею:
+                            <div class="container-panel">
+                                <img style="height:100px; width:200px;" src="image023.gif"></img>
+                            </div>
+                        </p>
+                        <p>
+                            Поворот об’єкта на координатній сітці:
+                            <div class="container-panel">
+                                <img style="height:100px; width:150px;" src="image024.jpg"></img>
+                                <p>Рис. 3 Поворот об’єкта</p>
+                            </div>
+                        </p>
+                        <p>
+                            Для виведення формул необхідно обчислити відповідні значення нових координат, 
+                            використавши формули косинус/синус у прямокутному трикутнику.
+                        </p>
+                        <p>
+                            Поворот об'єкта чи системи координат на кут є елементарним перетворенням, 
+                            якщо проводиться відносно початку координат.
+                        </p>
+                        <p>
+                            Довільне афінне відображення можна задати за допомогою композиції елементарних перетворень.
+                        </p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
