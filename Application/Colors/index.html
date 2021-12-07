@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     <title>Easy Graphics</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-    <title>Document</title>
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
         <div class="sidebar">
             <ul class="ul-nopadding">
                 <li>
-                    <a class="sb-cont-left" href="#">
+                    <a class="sb-cont-left" href="..\Fractals\julia.html">
                         <img class="sidebar-img" srs="./assets/fractal.png" />
                         <p class="sb-text">Fractal</p>
                     </a>
@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="sb-cont-left" href="#">
+                    <a class="sb-cont-left" href="..\Movement\index.html">
                         <img class="sidebar-img" srs="./assets/square.png" />
                         <p class="sb-text">Square</p>
                     </a>
@@ -69,7 +69,7 @@
                     </a>
                 </li>
                 <li>
-                    <a class="sb-cont-left" href="#">
+                    <a class="sb-cont-left" href="..\Help\help_color.html">
                         <img class="sidebar-img" srs="./assets/help.png" />
                         <p class="sb-text">Help</p>
                     </a>
@@ -81,54 +81,64 @@
                 <div class="control-panel">
                     <div class="control-panel-group">
                         <button class="control-panel-button">
-                            <img class="sidebar-img" srs="https://cdn-icons-png.flaticon.com/512/281/281060.png" />
-                            <div>
-                                <p>CMYK</p>
-                            </div>
+                            <input type="checkbox" class="sidebar-img" name="is_cmyk" id="is_cmyk">
+                            <label for="is_cmyk">CMYK</label>
                         </button>
                         <button class="control-panel-button">
-                            <img class="sidebar-img" srs="https://cdn-icons-png.flaticon.com/512/481/481853.png" />
-                            <div>
-                                <p>HSV</p>
-                            </div>
+                            <input type="checkbox" class="sidebar-img" name="is_hsv" id="is_hsv">
+                            <label for="is_hsv">HSV</label>
                         </button>
+                        <button class="control-panel-button">
+                            <a type="button" id="remove_fragment">Remove fragment</a>
+                        </button>
+                    </div>
+                    <div class="content-footer">
+                        <span class="footer-type">
+                            X :<span id="Pos-x"></span>
+                            Y :<span id="Pos-y"></span>
+                        </span>
                     </div>
                     <div class="control-panel-group">
                         <p class="control-panel-p">Brightness Blue</p>
-                        <input type="range" min="1" max="100" value="50" class="control-panel-slider cp-sl-brightness">
+                        <input type="range" min="0" max="1" value="0.5" step="0.01" class="control-panel-slider cp-sl-brightness" id="value">
                         <p class="control-panel-p">Saturation Blue</p>
-                        <input type="range" min="1" max="100" value="50" class="control-panel-slider cp-sl-saturation">
+                        <input type="range" min="0" max="1" value="0.5" step="0.01" class="control-panel-slider cp-sl-saturation" id="saturation">
                     </div>
                 </div>
                 <div class="canvas">
-                    <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
-                        class="img-canvas" />
-                    <br />
-                    <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"
-                        class="img-canvas" />
+                    <input type="file" id="file_input" class="custom-file-input" accept="image/png, image/jpg, image/jpeg">
+                    <br>
+                    <canvas id="original_canvas" width="275" height="275">
+                        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" class="img-canvas"/>
+                    </canvas>
+                    <br>
+                    <canvas id="modified_canvas" width="275" height="275">
+                        <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg" class="img-canvas" />
+                    </canvas>
                 </div>
                 <div class="content-footer">
                     <span>Result for selected pixel:</span>
                     <span class="footer-type">
-                        R :<span id="RGB-r">&nbsp;&nbsp;&nbsp;</span>
-                        G :<span id="RGB-g">&nbsp;&nbsp;&nbsp;</span>
-                        B :<span id="RGB-b">&nbsp;&nbsp;&nbsp;</span>
+                        R :<span id="RGB-r"></span>
+                        G :<span id="RGB-g"></span>
+                        B :<span id="RGB-b"></span>
                     </span>
                     <span class="footer-type">
-                        H :<span id="HSV-h">&nbsp;&nbsp;&nbsp;</span>
-                        S :<span id="HSV-s">&nbsp;&nbsp;&nbsp;</span>
-                        V :<span id="HSV-v">&nbsp;&nbsp;&nbsp;</span>
+                        H :<span id="HSV-h"></span>
+                        S :<span id="HSV-s"></span>
+                        V :<span id="HSV-v"></span>
                     </span>
                     <span class="footer-type">
-                        C :<span id="CMYK-c">&nbsp;&nbsp;&nbsp;</span>
-                        M :<span id="CMYK-m">&nbsp;&nbsp;&nbsp;</span>
-                        Y :<span id="CMYK-y">&nbsp;&nbsp;&nbsp;</span>
-                        K :<span id="CMYK-k">&nbsp;&nbsp;&nbsp;</span>
+                        C :<span id="CMYK-c"></span>
+                        M :<span id="CMYK-m"></span>
+                        Y :<span id="CMYK-y"></span>
+                        K :<span id="CMYK-k"></span>
                     </span>
                 </div>
             </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>

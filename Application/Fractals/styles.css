@@ -128,3 +128,170 @@ body, html {
   width: 40px;
   height: 40px;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #F0EAFF;
+}
+
+.mega-wrapper{
+    height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  background-color: #F0EAFF
+}
+
+.wrapper .sidebar {
+  width: 20%;
+  height: 100%;
+  background: #F0EAFF;
+  display: inline;
+}
+
+.wrapper .sidebar ul li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.wrapper .sidebar ul li a {
+  color: #000000;
+  display: block;
+  text-align:center;
+}
+
+.wrapper .sidebar ul li a .fas {
+    width: 25px;
+  }
+
+.wrapper .sidebar ul li:hover {
+  background-color: #594f8d;
+}
+    
+.wrapper .sidebar ul li:hover a {
+  color: #fff;
+}
+
+.wrapper .main_content {
+  width: 100%;
+  display: inline;
+  background-color: #FCF6FF;
+}
+
+#header {
+    background-color: #E0D6FF;
+    padding: 0.5em 1em 0.5em 2em;
+}
+
+#span-text {
+    font-family: Arial;
+    margin-left: 40em;
+}
+
+.ul-nopadding {
+    padding-left: 0px !important;
+}
+
+.sidebar-img {
+  margin: 0 2rem;
+  width: 40px;
+  height: 40px;
+}
+
+.sb-cont-left {
+  display: flex !important;
+  justify-content: left;
+}
+
+li a {
+  text-decoration: none;
+}
+
+.sb-text {
+  display: inline;
+  margin: auto 0;
+}
+
+.workbench {
+  height: 40rem !important;
+}
+
+body, html {
+  background-color: #F0EAFF;
+  margin: 0;
+  padding: 0;
+}
+
+.main-name{
+    margin: 2rem 25rem 0 25rem;
+    font-family: Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #7A4DFF;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 5px solid #7A4DFF;
+}
+
+.main-menu {
+    margin: 2rem 8rem 0 8rem;
+    width: 1000px;
+    height: 450px;
+}
+
+.main-menu a {
+  text-decoration: none;
+}
+
+.main-fractal {
+  float:left; 
+  width: 250px;
+  height: 440px;
+}
+
+.main-color {
+  float:left; 
+  width: 250px;
+  height: 440px;
+  margin-left: 8rem;
+}
+
+.main-move {
+  float:right;
+  width:250px;
+  height: 440px;
+}
+
+.main-img{
+    width: 250px;
+    height: 380px;
+    border-radius: 2rem;
+}
+
+.main-text-img{
+  margin: 1rem 3.2rem 0;
+  color: #000;
+  font-size: 25px;
+}
+
+.main-footer{
+  text-align: center;
+  background-color: #FCF6FF;
+  margin-top: 1rem;
+  padding-bottom: 2em;
+}
