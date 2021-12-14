@@ -1,3 +1,4 @@
+//Оголошення змінних
 var coordinateCount = 20;
 var lengthX = 15;
 var lengthY = 15;
@@ -5,14 +6,17 @@ var startX = {num: 1, suf: ''};
 var startY = {num: 1, suf: ''};
 var onLoad = true;
 
+//Оголошення змінної типу canvas
 var canvas = document.getElementById("canvas-move");
 /** @type {CanvasRenderingContext2D} */
 
 var canvasData = canvas.getContext("2d");
 
+//Зчитування розмірів координатної сітки
 var canvasWidth = canvas.width;
 var canvasHeight = canvas.height;
 
+//Побудова координатної сітки
 function DrawGrid(){
     canvasData.setTransform(1, 0, 0, 1, 0, 0);
     canvasData.clearRect(0, 0, canvasWidth, canvasHeight);
@@ -128,9 +132,11 @@ function DrawGrid(){
 
 DrawGrid();
 
+//Координати квадрата
 var squarePoints = [[],[],[],[]];
 var startPoints = [[],[],[],[]];
 
+//Зчитування координат діагоналі та їх присвоєння координатам квадрату
 function coordinatesDiagonal(){
     let diagonalX1 = parseFloat(document.getElementById('X1-square').value);
     let diagonalY1 = parseFloat(document.getElementById('Y1-square').value);
@@ -149,6 +155,7 @@ function coordinatesDiagonal(){
     return squarePoints;
 }
 
+//Функція для побудови квадрата на координатній площині
 function DrawSquare(coordinates, color){
     canvasData.beginPath();
     canvasData.moveTo(coordinates[0][0] / startX.num * coordinateCount, -coordinates[0][1] / startY.num * coordinateCount);
@@ -160,6 +167,7 @@ function DrawSquare(coordinates, color){
     canvasData.stroke();
 }
 
+//Функція для показу початкового і кінцевого розташувань квадрата
 function Timer() {
     var sec = 5;
     var timer = setInterval(function() {
@@ -180,6 +188,7 @@ function Timer() {
 }, 1000);
 }
 
+//Функція для руху квадрата
 function MoveSquare() {
     let moveX = parseFloat(document.getElementById('X1-move').value);
     let moveY = parseFloat(document.getElementById('Y1-move').value);
@@ -190,6 +199,7 @@ function MoveSquare() {
     return squarePoints;
 }
 
+//Функція для руху квадрата для масштабування
 function MoveSquareArray(squarePoints, moveX, moveY) {
     for (let index = 0; index < squarePoints.length; index++) {
         squarePoints[index][0] += moveX;
@@ -198,6 +208,7 @@ function MoveSquareArray(squarePoints, moveX, moveY) {
     return squarePoints;
 }
 
+//Масштабування квадрата
 function ScaleSquare() {
     let scaleX = parseFloat(document.getElementById('X1-scale').value);
     let scaleY = parseFloat(document.getElementById('Y1-scale').value);
@@ -212,6 +223,7 @@ function ScaleSquare() {
     return squarePoints;
 }
 
+//Поворот квадрата
 function AngleSquare() {
     let angle = parseFloat(document.getElementById('X1-clock').value);
     let radians = angle * Math.PI / 180;
@@ -224,6 +236,7 @@ function AngleSquare() {
     squarePoints = MulMatrix(squarePoints, angleMatrix);
 }
 
+//Множення матриць
 function MulMatrix(matrix1, matrix2) {
     let result = [[0, 0], [0, 0], [0, 0], [0, 0]];
     for (let i = 0; i < matrix1.length; i++) {
@@ -274,6 +287,7 @@ document.querySelector('.input-angle').addEventListener('keyup', ()=>{
     DrawSquare('hotpink');
 });*/
 
+//Комбінація усіх функцій
 function RedrawSquare(){
     DrawGrid();
     coordinatesDiagonal();
@@ -303,6 +317,7 @@ function RedrawSquare(){
 
 RedrawSquare();
 
+//Масштабування координатної сітки
 function Wheel(event) {
     if(event.originalEvent.wheelDelta / 120 > 0){
         coordinateCount = (coordinateCount + 3).between(1, 200) ? (coordinateCount + 3) : coordinateCount;
@@ -323,10 +338,12 @@ function Wheel(event) {
     return false;
 }
 
+//Прив'язка координатної сітки для масштабування
 $(document).ready(function(){
     $('#canvas-move').bind('mousewheel', Wheel);
 });
 
+//Обрахунки для масштабування
 Number.prototype.between = function(a, b, checker) {
     var min = Math.min.apply(Math, [a, b]);
     var max = Math.max.apply(Math, [a, b]);
