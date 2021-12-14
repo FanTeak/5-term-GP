@@ -28,12 +28,14 @@ const save = document.getElementById("save");
 function setup() {
     const canvas = createCanvas(500, 500);
     canvas.mouseWheel(zoom_canvas);
+    canvas.mouseMoved(redraw);
     //canvas.mouseOver(change_mouse_xy);
     save.addEventListener("click", (event) => {
         saveCanvas(canvas, 'my_canvas', 'png');
     });
     canvas.parent('fractal');
     pixelDensity(1);
+    noLoop();
 }
 function draw(){
 
@@ -45,18 +47,25 @@ function draw(){
         inner_red_colors[i] = map(sqrt(i / MAX_ITERATIONS), 0, 1, red(color(inner_color_min.value)), red(color(inner_color_max.value)));
         inner_green_colors[i] = map(sqrt(i / MAX_ITERATIONS), 0, 1, green(color(inner_color_min.value)), green(color(inner_color_max.value)));
         inner_blue_colors[i] = map(sqrt(i / MAX_ITERATIONS), 0, 1, blue(color(inner_color_min.value)), blue(color(inner_color_max.value)));
-
     }
 
     loadPixels();
 
+    
     let current_x = map(mouseX, 0, width, -1, 1);
     let current_y = map(mouseY, 0, height, -1, 1);
 
     for(let x = 0; x < width; x++){
         for(let y = 0; y < height; y++){
-            let real = map(x, 0, width, -zoom, zoom);
-            let imagine = map(y, 0, height, -zoom, zoom);
+            let real, imagine;
+            if(c_number_real.value=="" || c_number_imaginary.value==""){
+                real = map(x, 0, width, -zoom, zoom);
+                imagine = map(y, 0, height, -zoom, zoom);
+            }
+            else{
+                real = +c_number_real.value;
+                imagine = +c_number_imaginary.value;
+            }
 
             let iterations = 0;
             while(iterations < MAX_ITERATIONS){
@@ -93,27 +102,30 @@ function draw(){
 
 inner_color_min.addEventListener("input", event => {
     inner_color_min.value = event.target.value;
+    redraw();
 });
 
 inner_color_max.addEventListener("input", event => {
     inner_color_max.value = event.target.value;
+    redraw();
 });
 
 outer_color_min.addEventListener("input", event => {
     outer_color_min.value = event.target.value;
+    redraw();
 });
 
 outer_color_max.addEventListener("input", event => {
     outer_color_max.value = event.target.value;
-});
-
-c_number_real.addEventListener("change", event => {
-    c.c_number_real.value = event.target.value;
     redraw();
 });
 
-c_number_imaginary.addEventListener("change", event => {
-    c.c_number_imaginary.value = event.target.value;
+c_number_real.addEventListener("input", event => {
+    c_number_real.value = event.target.value;
+});
+
+c_number_imaginary.addEventListener("input", event => {
+    c_number_imaginary.value = event.target.value;
     redraw();
 });
 

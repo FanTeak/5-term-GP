@@ -12,10 +12,12 @@
 </head>
 <body>
   <div id="header">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-easel2-fill" viewBox="0 0 16 16">
+    <a href="../Menu/Menu.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-easel2-fill" viewBox="0 0 16 16">
         <path d="M8.447.276a.5.5 0 0 0-.894 0L7.19 1H2.5A1.5 1.5 0 0 0 1 2.5V10h14V2.5A1.5 1.5 0 0 0 13.5 1H8.809L8.447.276Z"/>
         <path fill-rule="evenodd" d="M.5 11a.5.5 0 0 0 0 1h2.86l-.845 3.379a.5.5 0 0 0 .97.242L3.89 14h8.22l.405 1.621a.5.5 0 0 0 .97-.242L12.64 12h2.86a.5.5 0 0 0 0-1H.5Zm3.64 2 .25-1h7.22l.25 1H4.14Z"/>
     </svg>
+    </a>
     <span id="span-text"><strong>Easy Graphics</strong></span>
   </div>
 
@@ -24,43 +26,43 @@
       <ul class="ul-nopadding">
         <li>
             <a class="sb-cont-left" href="../Fractals/mandelbrot.html">
-                <img class="sidebar-img" srs="https://img.icons8.com/dotty/80/000000/help.png"></img>
+                <img class="sidebar-img" src="../Colors/assets/fractal.png"></img>
                 <p class="sb-text">Fractal</p>
             </a>
         </li>
         <li>
             <a class="sb-cont-left" href="..\Colors\index.html">
-                <img class="sidebar-img" srs="..Colors/assets/color.png" />
+                <img class="sidebar-img" src="../Colors/assets/color.png" />
                 <p class="sb-text">Color</p>
             </a>
         </li>
         <li>
             <a class="sb-cont-left" href="..\Movement\index.html">
-                <img class="sidebar-img" srs="./assets/square.png" />
+                <img class="sidebar-img" src="../Colors/assets/square.png" />
                 <p class="sb-text">Square</p>
             </a>
         </li>
         <li>
             <a class="sb-cont-left" href="#">
-                <img class="sidebar-img" srs="./assets/export.png" />
+                <img class="sidebar-img" src="../Colors/assets/export.png" />
                 <p class="sb-text">Export</p>
             </a>
         </li>
         <li>
             <a class="sb-cont-left" href="#">
-                <img class="sidebar-img" srs="./assets/open.png" />
+                <img class="sidebar-img" src="../Colors/assets/open.png" />
                 <p class="sb-text">Open</p>
             </a>
         </li>
         <li>
             <a id="save" class="sb-cont-left" href="#">
-                <img class="sidebar-img" srs="./assets/save.png" />
+                <img class="sidebar-img" src="../Colors/assets/save.png" />
                 <p class="sb-text">Save</p>
             </a>
         </li>
         <li>
             <a class="sb-cont-left" href="..\Help\help_fractal.html">
-                <img class="sidebar-img" srs="./assets/help.png" />
+                <img class="sidebar-img" src="../Colors/assets/help.png" />
                 <p class="sb-text">Help</p>
             </a>
         </li>
@@ -69,17 +71,17 @@
     <div class="main_content">
       <div id="fractal_data">
         <div id="fractal_data_wrapper">
-          <div id="c_number_container">
+          <div id="c_number_container" class="square-enter">
             <h5>The main formula for both fractals is f(z)=z*z+c</h5>
             <label for="c_number_real"><h5>Where real C:</h5></label>
-            <input type="text" id ="c_number_real" name="c_number_real">
+            <input type="number" id ="c_number_real" name="c_number_real" min="-4.0" max="4.0" step="0.1">
             <label for="c_number_imaginary"><h5>Imaginary:</h5></label>
-            <input type="text" id="c_number_imaginary" name="c_number_imaginary">
+            <input type="number" id="c_number_imaginary" name="c_number_imaginary" min="-4.0" max="4.0" step="0.1">
           </div>
           <div id="scale_container">
             <label for="scale" id="scale_label"><h5>Scale</h5></label>
             <div>
-              <input type="range" id="scale" name="scale" value="2.0" min="0.0" max="4.0" list="range_datalist" step="0.5">
+              <input type="range" id="scale" class="control-panel-slider cp-sl-brightness" name="scale" value="2.0" min="0.0" max="4.0" list="range_datalist" step="0.5">
             </div>
             <datalist id="range_datalist">
               <option value="0.0" label="0%"></option>
@@ -94,7 +96,7 @@
             </datalist>
           </div>
         </div>
-        <div id="color_container">
+        <div id="color_container" class="square-enter">
           <div id="outer_color_container" class="d-flex">
             <div id="outer_color_min_container">
               <label for="outer_color_min"><h5>Outer color:</h5></label>
@@ -118,7 +120,7 @@
         </div>
 
       </div>
-      <div id="fractal_type">
+      <div id="fractal_type" style="margin-bottom: 0.5rem;">
         <a href="#"><button type="button" class="btn btn-outline-primary" disabled>Julia</button></a>
         <a href="mandelbrot.html"><button type="button" class="btn btn-outline-primary">Mandelbrot</button></a>
       </div>
@@ -167,43 +169,43 @@
             <ul class="ul-nopadding">
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/fractal.png" />
+                        <img class="sidebar-img" src="./assets/fractal.png" />
                         <p class="sb-text">Fractal</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/color.png" />
+                        <img class="sidebar-img" src="./assets/color.png" />
                         <p class="sb-text">Color</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/square.png" />
+                        <img class="sidebar-img" src="./assets/square.png" />
                         <p class="sb-text">Square</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/export.png" />
+                        <img class="sidebar-img" src="./assets/export.png" />
                         <p class="sb-text">Export</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/open.png" />
+                        <img class="sidebar-img" src="./assets/open.png" />
                         <p class="sb-text">Open</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#" id="save">
-                        <img class="sidebar-img" srs="./assets/save.png" />
+                        <img class="sidebar-img" src="./assets/save.png" />
                         <p class="sb-text">Save</p>
                     </a>
                 </li>
                 <li>
                     <a class="sb-cont-left" href="#">
-                        <img class="sidebar-img" srs="./assets/help.png" />
+                        <img class="sidebar-img" src="./assets/help.png" />
                         <p class="sb-text">Help</p>
                     </a>
                 </li>
